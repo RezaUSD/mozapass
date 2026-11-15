@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#DEC9FF"/>
+  <!-- Subtle dot grid -->
+  <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="2" fill="#181824" fill-opacity="0.12"/>
+  </pattern>
+  <rect width="1280" height="720" fill="url(#dots)"/>
+
+  <!-- Background geometric shapes -->
+  <rect x="70" y="90" width="380" height="240" rx="28" fill="#C6EAFF" stroke="#181824" stroke-width="6"/>
+  <rect x="830" y="370" width="370" height="250" rx="28" fill="#FFE37E" stroke="#181824" stroke-width="6"/>
+  <circle cx="1050" cy="175" r="95" fill="#D2F865" stroke="#181824" stroke-width="6"/>
+  <circle cx="220" cy="545" r="85" fill="#F05A36" stroke="#181824" stroke-width="6"/>
+
+  <!-- Connection lines -->
+  <path d="M260 210 L640 360 L1020 495" stroke="#181824" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round"/>
+  <path d="M640 360 L1050 175" stroke="#181824" stroke-width="7" stroke-linecap="round"/>
+  <path d="M640 360 L220 545" stroke="#181824" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Central Cloud & Server Cluster Card -->
+  <rect x="415" y="185" width="450" height="350" rx="34" fill="#232329" stroke="#181824" stroke-width="7"/>
+  <!-- Cloud silhouette -->
+  <path d="M555 345 H745 C782 345 810 318 810 283 C810 250 785 224 753 221 C740 185 706 160 665 160 C618 160 578 193 570 237 C536 241 510 269 510 303 C510 326 530 345 555 345 Z" fill="#FFFFFF" stroke="#181824" stroke-width="6" transform="translate(-20 45)"/>
+
+  <!-- Server rack bars inside central card -->
+  <rect x="465" y="420" width="350" height="38" rx="12" fill="#DEC9FF" stroke="#181824" stroke-width="5"/>
+  <circle cx="495" cy="439" r="8" fill="#D2F865" stroke="#181824" stroke-width="3"/>
+  <circle cx="523" cy="439" r="8" fill="#FFE37E" stroke="#181824" stroke-width="3"/>
+  <rect x="650" y="433" width="135" height="12" rx="6" fill="#181824"/>
+
+  <rect x="465" y="472" width="350" height="38" rx="12" fill="#C6EAFF" stroke="#181824" stroke-width="5"/>
+  <circle cx="495" cy="491" r="8" fill="#F05A36" stroke="#181824" stroke-width="3"/>
+  <circle cx="523" cy="491" r="8" fill="#D2F865" stroke="#181824" stroke-width="3"/>
+  <rect x="650" y="485" width="135" height="12" rx="6" fill="#181824"/>
+
+  <!-- Node badges -->
+  <circle cx="260" cy="210" r="24" fill="#FFFFFF" stroke="#181824" stroke-width="6"/>
+  <circle cx="1020" cy="495" r="24" fill="#FFFFFF" stroke="#181824" stroke-width="6"/>
+  <circle cx="1050" cy="175" r="22" fill="#181824"/>
+  <circle cx="220" cy="545" r="22" fill="#FFE37E" stroke="#181824" stroke-width="5"/>
+</svg>

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-outer-shell: #1E1E24;
+  --bg-canvas: #F7F7FA;
+  --bg-surface: #FFFFFF;
+  --bg-dark-anchor: #232329;
+  --bg-dark-elevated: #2C2C36;
+  --card-yellow: #FFE37E;
+  --card-lavender: #DEC9FF;
+  --card-sky: #C6EAFF;
+  --accent-coral: #F05A36;
+  --accent-lime: #D2F865;
+  --accent-lime-hover: #C4EE50;
+  --pastel-lavender: #DEC9FF;
+  --pastel-peach: #FFE37E;
+  --pastel-mint: #E6F9D5;
+  --pastel-rose: #FDE2E4;
+  --text-primary: #181824;
+  --text-secondary: #6E6E82;
+  --text-muted: #9E9EB0;
+  --border-tactile: #181824;
+  --border-subtle: #E4E4EC;
+  --semantic-success: #16A34A;
+  --semantic-warning: #D97706;
+  --semantic-danger: #DC2626;
+}
+
+body {
+  background-color: var(--bg-outer-shell);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sembunyikan scrollbar pada elemen yang tidak memerlukan indikator scroll (seperti tab filter) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scrollbar tipis & halus hanya untuk area daftar/konten yang memang panjang */
+.subtle-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(24, 24, 36, 0.22) transparent;
+}
+.subtle-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.subtle-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.subtle-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(24, 24, 36, 0.22);
+  border-radius: 9999px;
+}
+.subtle-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(24, 24, 36, 0.45);
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #181824 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
