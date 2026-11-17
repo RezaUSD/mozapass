@@ -138,8 +138,15 @@ export default function BuyerCheckoutPage() {
     }
   }
 
+  const isDummyGateway =
+    !order?.snapToken || order.snapToken.startsWith('snap-sandbox-');
+
   function handleMidtransPay() {
     if (!order) return;
+    if (isDummyGateway) {
+      void handleSimulatePay();
+      return;
+    }
     if (order.paymentRedirectUrl) {
       window.open(order.paymentRedirectUrl, '_blank', 'noopener,noreferrer');
     }
@@ -248,26 +255,45 @@ export default function BuyerCheckoutPage() {
                     </div>
 
                     <div className="space-y-2.5">
-                      <Button
-                        variant="primary"
-                        size="lg"
-                        fullWidth
-                        onClick={handleMidtransPay}
-                        isLoading={actionLoading === 'pay'}
-                      >
-                        Bayar via Midtrans Sandbox →
-                      </Button>
+                      {isDummyGateway ? (
+                        <>
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            fullWidth
+                            onClick={handleSimulatePay}
+                            isLoading={actionLoading === 'simulate'}
+                          >
+                            ⚡ Bayar Lunas Sekarang (Simulasi Demo) →
+                          </Button>
+                          <p className="text-[11px] text-center text-[#A5A5B5] leading-relaxed">
+                            Mode Demo: Pembayaran langsung lunas &amp; E-Ticket ber-QR diterbitkan otomatis.
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            fullWidth
+                            onClick={handleMidtransPay}
+                            isLoading={actionLoading === 'pay'}
+                          >
+                            Bayar via Midtrans Sandbox →
+                          </Button>
 
-                      {order.simulatorEnabled && (
-                        <Button
-                          variant="lime"
-                          size="lg"
-                          fullWidth
-                          onClick={handleSimulatePay}
-                          isLoading={actionLoading === 'simulate'}
-                        >
-                          ⚡ Simulasi Bayar Lunas (Demo Portofolio)
-                        </Button>
+                          {order.simulatorEnabled && (
+                            <Button
+                              variant="lime"
+                              size="lg"
+                              fullWidth
+                              onClick={handleSimulatePay}
+                              isLoading={actionLoading === 'simulate'}
+                            >
+                              ⚡ Simulasi Bayar Lunas (Demo Portofolio)
+                            </Button>
+                          )}
+                        </>
                       )}
 
                       <button
